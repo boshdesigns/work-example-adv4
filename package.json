@@ -1,0 +1,25 @@
+{
+  "name": "fmgadvancedfour",
+  "version": "1.0.1",
+  "description": "Standard package for all Infinity Platforms",
+  "author": "Spidersnet <jez.cordonnier@fridaymediagroup.com>",
+  "license" : "NONE",
+  "private": true,
+  "analyze": true,
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-drush": "0.0.4 ",
+    "grunt-contrib-jshint": "1.0.0",
+    "grunt-contrib-uglify": "2.0.0",
+    "grunt-contrib-watch": "1.0.0",
+    "grunt-sass": "1.2.1",
+    "jit-grunt": "0.10.0",
+    "load-grunt-config": "0.19.2",
+    "load-grunt-tasks": "3.5.2",
+    "node-bourbon": "1.2.3",
+    "node-sass": "3.8.0"
+  },
+  "scripts": {
+    "postinstall": "find node_modules/ -name '*.info' -type f -delete"
+  }
+}

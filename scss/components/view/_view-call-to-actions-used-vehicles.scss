@@ -1,0 +1,16 @@
+// Call to Actions (Used Vehicles) View
+.view-call-to-actions-used-vehicles {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  &__list {
+    @include block-grid(1);
+    @media #{$medium-up} { @include block-grid(4); }
+    li {
+      padding-bottom: 0;
+      @media #{$medium-only} {
+        padding-left:5px;
+        padding-right:5px;
+      }
+    }
+  }
+}

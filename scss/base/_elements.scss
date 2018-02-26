@@ -1,0 +1,121 @@
+// Elements
+//
+// Things to review before you write code here:
+// - Be sure to load after "foundation" import.
+// - Also, before adding styles be sure to modify variables in the
+//   "base/_init.scss" file. You may not need to write any code.
+
+// Headings
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+h1.page__title--location {
+  font-size: $crumb-font-size;
+  margin: 0;
+  font-weight: bold;
+  padding: 8px;
+  text-align: left;
+  @media #{$medium-up} {
+    color: inherit;
+    text-align: right;
+  }
+}
+
+// Logged in User Tabs - View / Edit / Replicate / Log
+// Handled in FMGAUTOBASE - overrides
+.front.logged-in .action-tabs ul.button-group {
+  margin-top: 57px;
+}
+
+.page__title,
+.field-name-title--page h2 {
+  font-weight: bold;
+  font-size: $h1-font-size;
+  margin-bottom: 0;
+}
+
+// Reset some elements so they behaviour
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+figure {
+  margin: 0;
+}
+
+:focus {
+  outline: none;
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.fmgauto-finance-plugins--adjustment-form__update {
+  margin-top: 23px;
+}
+
+
+// Form elements
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+select,
+input[type="text"],
+input[type="password"],
+input[type="date"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="month"],
+input[type="week"],
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="tel"],
+input[type="time"],
+input[type="url"],
+input[type="color"],
+textarea {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: $global-radius;
+  -moz-border-radius: $global-radius;
+  -webkit-border-radius: $global-radius;
+  font-weight: 700;
+  min-height: 50px;
+}
+
+select {
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeD0iMTJweCIgeT0iMHB4IiB3aWR0aD0iMjRweCIgaGVpZ2h0PSIzcHgiIHZpZXdCb3g9IjAgMCA2IDMiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDYgMyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+PHBvbHlnb24gcG9pbnRzPSI1Ljk5MiwwIDIuOTkyLDMgLTAuMDA4LDAgIiBzdHlsZT0iZmlsbDogIzk5OTk5OSIvPjwvc3ZnPg==);
+  &:hover {
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeD0iMTJweCIgeT0iMHB4IiB3aWR0aD0iMjRweCIgaGVpZ2h0PSIzcHgiIHZpZXdCb3g9IjAgMCA2IDMiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDYgMyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+PHBvbHlnb24gcG9pbnRzPSI1Ljk5MiwwIDIuOTkyLDMgLTAuMDA4LDAgIi8+PC9zdmc+);
+  }
+}
+
+// Hide grippie bar for textareas
+.grippie {
+  display: none;
+}
+
+
+// Tables
+// ** Only apply styling when a table element
+// ** is inside a page body
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+.field-name-body table {
+  margin-bottom: 10px;
+  width: 100%;
+  tbody {
+    border: none;
+  }
+  tr td {
+    border: {
+      style: solid;
+      width: 1px;
+    }
+    padding: {
+      top: 5px;
+      right: 10px;
+      bottom: 5px;
+      left: 10px;
+    }
+  }
+}

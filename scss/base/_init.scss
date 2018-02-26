@@ -1,0 +1,170 @@
+@import "../../zurb_foundation/scss/foundation/functions";
+
+// b. Grid
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+$row-width: rem-calc(1200);
+
+// c. Global
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+$primary-color: #123456;
+$secondary-color: #333;
+$body-bg: #fff;
+$body-font-color: #000;
+
+$global-radius: 2px;
+
+
+// Custom breakpoint font reduction
+
+
+// e. Typography
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+$header-top-margin: 0;
+$h1-font-size: rem-calc(42);
+$h2-font-size: rem-calc(30);
+$h3-font-size: rem-calc(24);
+$h4-font-size: rem-calc(20);
+$h5-font-size: rem-calc(18);
+$h6-font-size: rem-calc(16);
+
+// We use these to control how much reduction for header size on small screens
+$h1-font-reduction: rem-calc(8) !default;
+$h2-font-reduction: rem-calc(6) !default;
+$h3-font-reduction: 0 !default;
+$h4-font-reduction: 0 !default;
+$h5-font-reduction: 0 !default;
+$h6-font-reduction: 0 !default;
+
+// Paragraphs
+$paragraph-font-size: rem-calc(18);
+$paragraph-line-height: rem-calc(30);
+$paragraph-margin-bottom: rem-calc(15);
+
+// Headers
+$header-font-weight: 700;
+
+// d. Media Query Ranges
+// Any changes to the ranges should be reflected in the theme breakpoints,
+// used by the Picture Module (set in the info file). iVendi breakpoints are
+// set within the feature, this should be considered if using iVendi.
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+$small-range: (0em, 47.9375em);
+$medium-range: (48em, 63.9375em);
+$large-range: (64em, 90.9375em);
+$xlarge-range: (90em, 120.9375em);
+$xxlarge-range: (120em, 99999999em);
+
+$screen: "only screen";
+
+$landscape: "#{$screen} and (orientation: landscape)";
+$portrait: "#{$screen} and (orientation: portrait)";
+
+$small-up: $screen;
+$small-only: "#{$screen} and (max-width: #{upper-bound($small-range)})";
+
+$medium-up: "#{$screen} and (min-width:#{lower-bound($medium-range)})";
+$medium-only: "#{$screen} and (min-width:#{lower-bound($medium-range)}) and (max-width:#{upper-bound($medium-range)})";
+
+$large-up: "#{$screen} and (min-width:#{lower-bound($large-range)})";
+$large-only: "#{$screen} and (min-width:#{lower-bound($large-range)}) and (max-width:#{upper-bound($large-range)})";
+
+$xlarge-up: "#{$screen} and (min-width:#{lower-bound($xlarge-range)})";
+$xlarge-only: "#{$screen} and (min-width:#{lower-bound($xlarge-range)}) and (max-width:#{upper-bound($xlarge-range)})";
+
+$xxlarge-up: "#{$screen} and (min-width:#{lower-bound($xxlarge-range)})";
+$xxlarge-only: "#{$screen} and (min-width:#{lower-bound($xxlarge-range)}) and (max-width:#{upper-bound($xxlarge-range)})";
+
+// e. Typography
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+$anchor-font-color-hover: $secondary-color;
+
+// 04. Breadcrumbs
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+$crumb-bg: transparent;
+$crumb-padding: 0;
+$crumb-font-size: rem-calc(12);
+$crumb-font-transform: capitalize;
+$crumb-link-decor: none;
+$crumb-slash: "";
+$crumb-font-color: inherit;
+$crumb-font-color-current: inherit;
+
+// 05. Buttons
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+$button-tny: rem-calc(8);
+$button-sml: rem-calc(10);
+$button-med: rem-calc(12);
+$button-lrg: rem-calc(14);
+$button-font-tny: rem-calc(12);
+$button-font-sml: rem-calc(16);
+$button-font-med: rem-calc(18);
+$button-font-lrg: rem-calc(18);
+
+$button-radius: $global-radius;
+$button-font-weight: 700;
+
+
+// 11. Forms
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+$form-label-font-size: rem-calc(15);
+$form-label-font-color: #999999;
+
+$input-bg-color: #ffffff;
+$input-font-size: rem-calc(15);
+$input-border-width: 2px;
+$input-focus-bg-color: #f6f6f6;
+$input-border-color: #dddddd;
+$input-focus-border-color: $input-border-color;
+$form-label-font-size: rem-calc(15);
+$form-label-font-color: #000;
+$input-box-shadow: none;
+$input-font-color: #999999;
+
+$select-bg-color: #ffffff;
+$select-hover-bg-color: #f6f6f6;
+
+// 31. Tabs
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+$tabs-navigation-padding: rem-calc(5);
+$tabs-navigation-bg-color: inherit;
+$tabs-navigation-active-bg-color: inherit;
+$tabs-navigation-font-color: inherit;
+$tabs-navigation-active-font-color: inherit;
+$tabs-navigation-hover-bg-color: inherit;
+
+// 33. Tooltips
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+$has-tip-border-bottom: none;
+$has-tip-font-color: $primary-color;
+$has-tip-border-bottom-hover: none;
+$has-tip-font-color-hover: none;
+
+// 34. Top Bar
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+$topbar-bg-color: transparent;
+$topbar-height: rem-calc(50);
+$topbar-margin-bottom: rem-calc(0);
+$topbar-link-font-size: rem-calc(16);
+$topbar-link-bg-hover: $topbar-bg-color;
+$topbar-dropdown-bg: $topbar-bg-color;
+$topbar-dropdown-link-bg: $topbar-bg-color;
+$topbar-dropdown-link-bg-hover: $topbar-link-bg-hover;
+$topbar-breakpoint: #{lower-bound($large-range)};
+$topbar-media-query: $large-up;
+
+$topbar-menu-link-font-size: rem-calc(20);
+$topbar-menu-link-transform: capitalize;
+$topbar-menu-link-weight: normal;
+
+$topbar-arrows: false; //Set false to remove the triangle icon from the menu item

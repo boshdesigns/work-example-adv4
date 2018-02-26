@@ -1,0 +1,22 @@
+.block-views {
+  .block-title {
+    font-size: rem-calc(16);
+    margin-right: 3px;
+    @media #{$medium-up} {
+      display: inline-block;
+    }
+    &::before {
+      content: "\f1b9";
+      font-family: 'FontAwesome';
+      margin-right: 5px;
+    }
+  }
+
+  &.block-views-branch-info-footer-branch {
+    .block-title {
+      &::before {
+        content: "\f041";
+      }
+    }
+  }
+}

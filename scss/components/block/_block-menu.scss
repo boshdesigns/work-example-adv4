@@ -1,0 +1,19 @@
+// Block Menu
+.block-menu {
+  display: inline-block;
+
+  // Footer Links
+  &.block-menu-menu-footer-links {
+    .menu {
+      margin-left: 0;
+      text-align: center;
+      li {
+        display: inline-block;
+        margin-right: 5px;
+        list-style: none;
+        font-size: rem-calc(16);
+      }
+    }
+  }
+
+}

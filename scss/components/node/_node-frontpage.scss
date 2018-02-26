@@ -1,0 +1,88 @@
+// Frontpage Bundle
+.node-frontpage {
+
+  // Full View Mode
+  &.view-mode-full {
+
+    .field-name-title {
+      margin-bottom: 35px;
+      h1 {
+        text-align: center;
+        @media #{$large-up} {
+          text-align: left;
+        }
+      }
+      @media #{$large-up} {
+        margin-bottom: 10px;
+      }
+    }
+
+    .field-name-body {
+      margin-bottom: 30px;
+      padding: {
+        right: 20px;
+        left: 20px;
+      }
+      @media #{$medium-up} {
+        padding: {
+          right: 25px;
+          left: 25px;
+        }
+      }
+    }
+
+    .field-name-field-body,
+    .entity-entityform-type {
+      padding: {
+        right: 20px;
+        left: 20px;
+      }
+      @media #{$medium-up} {
+        padding: {
+          right: 0;
+          left: 0;
+        }
+      }
+    }
+
+    .field-name-field-files {
+      margin-bottom: 20px;
+      a {
+        display: block;
+        padding: {
+          top: 10px;
+          bottom: 10px;
+        }
+        text-align: center;
+        -webkit-transition: all 300ms ease-out;
+        -moz-transition: all 300ms ease-out;
+        -o-transition: all 300ms ease-out;
+        transition: all 300ms ease-out;
+      }
+      .file {
+        font-size: rem-calc(17);
+        letter-spacing: 1px;
+        @media #{$large-up} {
+          font-size:rem-calc(18);
+        }
+        .file-title{
+          &:before{
+            content:'\f15b';
+            font-family: 'fontawesome';
+            padding-right: 10px;
+          }
+        }
+      }
+    }
+
+    .field-name-field-form {
+      border-top: {
+        color: inherit;
+        style: solid;
+        width: 1px;
+      }
+      padding-top: 80px;
+    }
+  }
+
+}

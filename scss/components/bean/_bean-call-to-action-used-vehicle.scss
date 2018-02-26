@@ -1,0 +1,22 @@
+// Call To Action (Used Vehicle) Bundle
+.bean-call-to-action-used-vehicle {
+  border-radius: $global-radius;
+  -moz-border-radius: $global-radius;
+  -webkit-border-radius: $global-radius;
+  font: {
+    size: rem-calc(16);
+    weight: bold;
+  }
+  letter-spacing: 1px;
+  padding: {
+    top: 20px;
+    bottom: 20px;
+  }
+  margin-bottom: 8px;
+  text-align: center;
+  -webkit-transition: all 300ms ease-out;
+  -moz-transition: all 300ms ease-out;
+  -o-transition: all 300ms ease-out;
+  -ms-transition: all 300ms ease-out;
+  transition: all 300ms ease-out;
+}

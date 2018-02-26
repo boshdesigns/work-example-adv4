@@ -1,0 +1,846 @@
+// ***
+// Hide Search Block in sidebar for non-front tablet + mobile view
+// Also styling for search block when sidebar not visible
+// ***
+.not-front {
+  .block-fmg-search-blocks {
+    height: auto;
+    left: 0;
+    margin-top: 300%;
+    padding: {
+      top: 15px;
+      right: 15px;
+      bottom: 90px;
+      left: 15px;
+    }
+    position: fixed;
+    right: 0;
+    top: 0;
+    overflow: scroll;
+    -webkit-transition: all 300ms ease-out;
+    -moz-transition: all 300ms ease-out;
+    -o-transition: all 300ms ease-out;
+    transition: all 300ms ease-out;
+    width: 100%;
+    z-index: 998;
+    &.open {
+      height: 100%;
+      margin-top: 0;
+    }
+    @media #{$large-up} {
+      margin-top: 0;
+      padding: {
+        top: 13px;
+        right: 20px;
+        bottom: 20px;
+        left: 20px;
+      }
+      position: relative;
+      z-index: 0;
+    }
+
+
+    // ***
+    // Styling for search block when there is no sidebar
+    // ***
+    &--without-sidebar {
+      height: 100%;
+      position: fixed;
+      right: -50%;
+      top: 0;
+      -webkit-transition: all 300ms ease-out;
+      -moz-transition: all 300ms ease-out;
+      -o-transition: all 300ms ease-out;
+      transition: all 300ms ease-out;
+      width: 50%;
+      z-index: 998;
+      &.open {
+        right: 0;
+        .block-fmg-search-blocks {
+          margin-top: 0;
+        }
+      }
+
+      .block-fmg-search-blocks {
+        height: 100%;
+        @media #{$large-up} {
+          padding-top: 100px;
+          #used-search-block {
+            margin-right: 15%;
+            margin-left: 15%;
+            width: 70%;
+          }
+        }
+      }
+    }
+    // ***
+    // end of no sidebar styling
+    // ***
+
+
+    .used-search-block-submit {
+      .button {
+        padding: {
+          top: 16px;
+          bottom: 16px;
+        }
+        margin-top: 15px;
+      }
+    }
+  }
+
+  // Create button to expand search block on Mobile & Tablet
+  .search-opener {
+    background: rgba(255,255,255,0.8);
+    bottom: 0;
+    color: #111111;
+    font: {
+      size: rem-calc(16);
+      weight: bold;
+    }
+    right: 0;
+    padding: 20px 10px;
+    position: fixed;
+    text-align: center;
+    -webkit-transition: all 300ms ease-out;
+    -moz-transition: all 300ms ease-out;
+    -o-transition: all 300ms ease-out;
+    transition: all 300ms ease-out;
+    width: 100%;
+    z-index: 999;
+    &.open {
+      border: none;
+      background: rgba(255,255,255,1);
+      width: 100%;
+    }
+    @media #{$large-up} {
+      bottom: -100px;
+    }
+
+    // ***
+    // Styling for search block when there is no sidebar
+    // ***
+    &--without-sidebar {
+      @media #{$large-up} {
+        border-top: {
+          color: rgba(228,228,228,0.8);
+          style: solid;
+          width: 1px;
+        }
+        border-left: {
+          color: rgba(228,228,228,0.8);
+          style: solid;
+          width: 1px;
+        }
+        bottom: 0px;
+        width: 25%;
+
+        &.open {
+          width: 50%;
+        }
+
+
+      }
+      @media #{$xlarge-up} {
+        width: 18%;
+      }
+    }
+  }
+}
+
+
+
+// ***
+// General styling to Search block
+// ***
+.block-fmg-search-blocks {
+  padding: 15px;
+
+  // Search specific select/input styling
+  select {
+    border-width: 0;
+    &:hover {
+      color: #000000;
+    }
+  }
+
+  .used-search-block-heading {
+    @include clearfix();
+    margin-bottom: 20px;
+  }
+  .new-search-block-title,
+  .used-search-block-title {
+    h2 {
+      margin-bottom: 0;
+      font: {
+        size: rem-calc(20);
+        weight: 700;
+      }
+    }
+  }
+  #facet_ftm_field_vehicle_price,
+  #facet_ftm_fmg_quoteware_api_payment {
+    @include grid-row($behavior: nest);
+    .form-item {
+      @include grid-column(6);
+      margin-bottom: 0;
+      &.form-item-min { padding-right: 5px; }
+      &.form-item-max { padding-left: 5px; }
+    }
+  }
+  .button {
+    border-radius: $global-radius;
+    width: 100%;
+  }
+
+  // Change some of the styling for select elements
+  .form-item {
+    margin-bottom: 5px;
+    select {
+      margin-bottom: 0;
+    }
+  }
+
+  &.block-fmg-search-blocks-fmg-used-vehicle-search-block {
+    .used-search-block-count {
+      font-size: rem-calc(12);
+      font-weight: bold;
+      span {
+        padding-left: 3px;
+      }
+    }
+
+    #used-search-facets {
+      .basic-search {
+        @include grid-column($columns:12,$collapse:true);
+      }
+    }
+
+    #fmg-solr-toggle-form,
+    #fmg-solr-toggle-form--2 {
+      @include grid-row($behavior: nest);
+      clear: both;
+      margin-bottom: 15px;
+
+      .form-radios {
+        @include clearfix;
+        margin-top: 10px;
+      }
+
+      &__total,
+      &__ivendi {
+        .form-item {
+          float: left;
+          margin: 0 5px 0 0;
+          width: 100%;
+          height: 26px;
+          position: relative;
+        }
+
+        label, input {
+          position: absolute;
+          cursor: pointer;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+        }
+
+        input[type="radio"] {
+          display: none;
+        }
+
+        input[type="radio"]:checked + label {
+          &::before {
+            border-radius: 50%;
+            -moz-border-radius: 50%;
+            -webkit-border-radius: 50%;
+            content: "";
+            height: 13px;
+            left: 3px;
+            position: absolute;
+            top: 5px;
+            width: 13px;
+            z-index: 2;
+          }
+        }
+
+        label {
+          font-weight: bold;
+          padding: {
+            left: 25px;
+          }
+          &:after {
+            background-color: #ffffff;
+            border-radius: 50%;
+            -moz-border-radius: 50%;
+            -webkit-border-radius: 50%;
+            content: "";
+            height: 19px;
+            left: 0;
+            position: absolute;
+            top: 2px;
+            width: 19px;
+            z-index: 1;
+          }
+        }
+      }
+
+
+      &__total {
+        @include grid-column(5);
+        margin-bottom: 0;
+        padding-right: 0;
+        .form-item { margin-top: 0; }
+      }
+      &__ivendi {
+        @include grid-column(7);
+        margin-bottom: 0;
+        padding-left: 0;
+        .form-item { margin-top: 0; }
+      }
+      .form-radio {
+        display: inline-block;
+        margin-bottom: 20px;
+      }
+      .option {
+        margin-right: 0;
+        margin-left: 0;
+      }
+    }
+
+    // fmg_facetapi_select
+    .fmg_facetapi_select {
+      fieldset {
+        padding: 2px 0 10px;
+        margin: 0;
+        border: 0;
+
+        legend {
+          color: #fff;
+          background-color: transparent;
+          font-size: rem-calc(12px);
+          font-weight: normal;
+          padding-left: ($column-gutter / 4);
+          padding-right: ($column-gutter / 4);
+        }
+      }
+    }
+
+    // Range input
+    .fmg_facetapi_range {
+      @include grid-row($behavior: nest);
+
+      fieldset {
+        border: none;
+        margin: 0;
+        padding: 0;
+
+        legend {
+          @include grid-column(12);
+          background-color: transparent;
+          color: #fff;
+          font-size: rem-calc(12px);
+          font-weight: normal;
+          margin: 0;
+          padding-bottom: 0;
+        }
+      }
+
+      .form-type-select {
+        @include grid-column(6);
+        margin-bottom: 0;
+
+        // Medium Up Only
+        @media #{$medium-up} {
+          @include grid-column(12);
+        }
+      }
+
+      .form-submit {
+        display: none;
+      }
+    }
+
+    // fmg_keyword_search
+    .fmg_keyword_search {
+
+      fieldset {
+        padding: 2px 0 10px;
+        margin: 0;
+        border: 0;
+
+        legend {
+          color: #fff;
+          background-color: transparent;
+          font-size: rem-calc(12px);
+          font-weight: normal;
+          padding-left: ($column-gutter / 4);
+          padding-right: ($column-gutter / 4);
+        }
+      }
+    }
+
+    #toggle-options {
+      display: none;
+    }
+  }
+  .used-search-block-submit {
+    .button {
+      font-size: rem-calc(18);
+      margin: {
+        top: 20px;
+        bottom: 0;
+      }
+      padding: {
+        top: 21px;
+        right: 0;
+        bottom: 21px;
+        left: 0;
+      }
+      text-align: center;
+    }
+  }
+}
+
+// Front Page Medium Only
+@media #{$medium-only} {
+  .front {
+    .block-fmg-search-blocks {
+      padding: 20px;
+
+
+      &.block-fmg-search-blocks-fmg-used-vehicle-search-block {
+
+        // Title
+        .new-search-block-title,
+        .used-search-block-title {
+          float: left;
+          h2 {
+            font-size: rem-calc(16);
+          }
+        }
+
+        //Button
+        .button {
+          margin-top: 0;
+        }
+
+        // Count
+        .used-search-block-count {
+          margin-bottom: 0;
+          text-align: left;
+          float: right;
+          font-size: rem-calc(16);
+        }
+
+        // Used Search Block
+        #used-search-block {
+          @include grid-row($behavior: nest-collapse);
+
+          .used-search-block-heading {
+            @include grid-column($columns:12);
+            margin-bottom: 2px;
+            .used-search-block-title {
+              margin-left: -7px;
+            }
+          }
+
+          // Main Search Facets
+          #used-search-facets {
+            @include grid-column($columns:10, $collapse:true);
+            margin-top: -13px;
+
+            .form-type-select,
+            select {
+              margin-bottom: 0;
+            }
+
+            // Basic Search
+            .basic-search {
+              @include grid-column(3);
+              margin: 21px 0 10px;
+              padding-left: ($column-gutter / 4);
+              padding-right: ($column-gutter / 4);
+            }
+
+            // Advance Search
+            .advanced-search {
+              @include grid-column(3);
+              margin: 20px 0 10px;
+              padding-left: ($column-gutter / 4);
+              padding-right: ($column-gutter / 4);
+            }
+
+            // fmg_facetapi_select
+            .fmg_facetapi_select {
+              fieldset {
+                padding: 2px 0 10px;
+                margin: -20px 0 0 0;
+                border: 0;
+
+                legend {
+                  color: #fff;
+                  background-color: transparent;
+                  font-size: rem-calc(12px);
+                  padding-left: ($column-gutter / 4);
+                  padding-right: ($column-gutter / 4);
+                }
+              }
+            }
+
+            // Range input
+            .fmg_facetapi_range {
+              @include grid-column(6);
+              margin: 0;
+              padding-left: 0;
+              padding-right: 0;
+
+              fieldset {
+                padding-top: 2px;
+                padding-bottom: 10px;
+
+                legend {
+                  color: #fff;
+                  font-size: rem-calc(12px);
+                  padding-left: ($column-gutter / 4);
+                  padding-right: ($column-gutter / 4);
+                }
+
+                .form-type-select {
+                  margin: 0;
+                }
+              }
+
+              .form-type-select {
+                @include grid-column(6);
+                margin: 13px 0 10px;
+                padding-left: ($column-gutter / 4);
+                padding-right: ($column-gutter / 4);
+              }
+            }
+
+
+            // Price Min / Max
+            #facet_ftm_field_vehicle_price {
+              @include grid-column(6);
+              padding-left: ($column-gutter / 4);
+              padding-right: ($column-gutter / 4);
+              margin: 13px 0 10px;
+
+              .form-item.form-item-min {
+                @include grid-column(6);
+                padding-left: 0;
+                margin: 0;
+                padding-right: ($column-gutter / 4);
+
+                &.form-type-select {
+                  margin: 0 !important;
+                }
+              }
+
+              .form-item.form-item-max {
+                @include grid-column(6);
+                padding-right: 0;
+                padding-left: ($column-gutter / 4);
+
+                &.form-type-select {
+                  margin: 0 !important;
+                }
+              }
+            }
+
+            // Finance Price Min / Max
+            .price_toggle {
+              @include grid-column(6);
+              padding-left: ($column-gutter / 4);
+              padding-right: ($column-gutter / 4);
+              position: relative;
+              margin-top: 8px;
+
+              #fmg-solr-toggle-form {
+                @include grid-column($columns:12,$pull:2);
+                width: 120%;
+                position: absolute;
+                top: -30px;
+
+                &__total {
+                  width: 50%;
+                }
+                &__ivendi {
+                  width: 50%;
+                }
+
+                .form-item {
+                  margin-bottom: 0;
+                }
+              }
+
+              #facet_ftm_field_vehicle_price,
+              #facet_ftm_fmg_quoteware_api_payment {
+                @include grid-column(12);
+                margin: 13px 0 10px;
+                padding-left: 0;
+                padding-right: 0;
+
+                .form-item {
+                  @include grid-column(6);
+                  padding-left: 0;
+                  padding-right: 10px;
+
+                  + .form-item {
+                    padding-left: 10px;
+                    padding-right: 0;
+                  }
+
+                  &.form-type-select {
+                    margin: 0 !important;
+                  }
+                }
+              }
+            }
+
+            // fmg_keyword_search
+            .fmg_keyword_search {
+              margin-top: 0;
+
+              fieldset {
+                padding: 2px 0 10px;
+                margin: 0;
+                border: 0;
+
+                legend {
+                  color: #fff;
+                  background-color: transparent;
+                  font-size: rem-calc(12px);
+                  font-weight: normal;
+                  padding-left: ($column-gutter / 4);
+                  padding-right: ($column-gutter / 4);
+                }
+              }
+            }
+          }
+
+
+          // Submit Button
+          .used-search-block-submit {
+            @include grid-column($columns:2, $float:right);
+            .button {
+              margin-top: 0;
+            }
+          }
+
+        }
+      }
+    }
+  }
+}
+
+// Front Page Desktop Horizontal Search
+@media #{$large-up} {
+  .front {
+    .block-fmg-search-blocks {
+
+      &.block-fmg-search-blocks-fmg-used-vehicle-search-block {
+
+        // Used Search Block
+        #used-search-block {
+          @include grid-row($behavior: nest-collapse);
+
+          .used-search-block-heading {
+            display: none;
+          }
+
+          // Main Serach Facets
+          #used-search-facets {
+            @include grid-column($columns:10, $collapse:true);
+            margin-top: -13px;
+
+            .form-type-select,
+            select {
+              margin-bottom: 0;
+            }
+
+            // Remove padding left
+            #fmg_manufacturer_select {
+              padding-left: 0;
+            }
+
+            // Basic Search
+            .basic-search {
+              @include grid-column(3);
+              margin: 20px 0 10px;
+              padding-left: ($column-gutter / 4);
+              padding-right: ($column-gutter / 4);
+            }
+
+            // Advance Search
+            .advanced-search {
+              @include grid-column(3);
+              margin: 20px 0 10px;
+              padding-left: ($column-gutter / 4);
+              padding-right: ($column-gutter / 4);
+            }
+
+            // fmg_facetapi_select
+            .fmg_facetapi_select {
+              fieldset {
+                padding: 2px 0 10px;
+                margin: -20px 0 0 0;
+                border: 0;
+
+                legend {
+                  color: #fff;
+                  background-color: transparent;
+                  font-size: rem-calc(12px);
+                  padding-left: ($column-gutter / 4);
+                  padding-right: ($column-gutter / 4);
+                }
+              }
+            }
+
+            // Range input
+            .fmg_facetapi_range {
+              @include grid-column(6);
+              margin: 0;
+              padding-left: 0;
+              padding-right: 0;
+
+              fieldset {
+                padding-top: 2px;
+                padding-bottom: 10px;
+
+                legend {
+                  color: #fff;
+                  font-size: rem-calc(12px);
+                  padding-left: ($column-gutter / 4);
+                  padding-right: ($column-gutter / 4);
+                }
+
+                .form-type-select {
+                  margin: 0;
+                }
+              }
+
+              .form-type-select {
+                @include grid-column(6);
+                margin: 20px 0 10px;
+                padding-left: ($column-gutter / 4);
+                padding-right: ($column-gutter / 4);
+              }
+            }
+
+
+            // Price Min / Max
+            #facet_ftm_field_vehicle_price {
+              @include grid-column(6);
+              padding-left: ($column-gutter / 4);
+              padding-right: ($column-gutter / 4);
+              margin: 20px 0 10px;
+
+              .form-item.form-item-min {
+                @include grid-column(6);
+                padding-left: 0;
+                margin: 0;
+                padding-right: ($column-gutter / 4);
+
+                &.form-type-select {
+                  margin: 0 !important;
+                }
+              }
+
+              .form-item.form-item-max {
+                @include grid-column(6);
+                padding-right: 0;
+                padding-left: ($column-gutter / 4);
+
+                &.form-type-select {
+                  margin: 0 !important;
+                }
+              }
+            }
+
+            // Finance Price Min / Max
+            .price_toggle {
+              @include grid-column(6);
+              padding-left: ($column-gutter / 4);
+              padding-right: ($column-gutter / 4);
+
+              #fmg-solr-toggle-form {
+                @include grid-column(4);
+                float: left;
+                margin: 13px 0 0;
+                padding: 0;
+
+                &__total,
+                &__ivendi {
+                  clear: both;
+                  float: left;
+                  padding: 0;
+                  width: 100%;
+                }
+
+                .form-item {
+                  margin-bottom: 0;
+                }
+              }
+
+              #facet_ftm_field_vehicle_price,
+              #facet_ftm_fmg_quoteware_api_payment {
+                @include grid-column(8);
+                margin: 20px 0 10px;
+                padding-left: 0;
+                padding-right: 0;
+
+                .form-item {
+                  @include grid-column(6);
+                  padding-left: 0;
+                  padding-right: ($column-gutter / 4);
+
+                  + .form-item {
+                    padding-left: ($column-gutter / 4);
+                    padding-right: 0;
+                  }
+
+                  &.form-type-select {
+                    margin: 0 !important;
+                  }
+                }
+              }
+            }
+
+            // fmg_keyword_search
+            .fmg_keyword_search {
+              margin-top: 0;
+
+              fieldset {
+                padding: 2px 0 10px;
+                margin: 0;
+                border: 0;
+
+                legend {
+                  color: #fff;
+                  background-color: transparent;
+                  font-size: rem-calc(12px);
+                  font-weight: normal;
+                  padding-left: ($column-gutter / 4);
+                  padding-right: ($column-gutter / 4);
+                }
+              }
+            }
+          }
+
+
+          // Submit Button
+          .used-search-block-submit {
+            @include grid-column($columns:2, $float:right);
+            padding-right: 0;
+            .button {
+              margin-top: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}

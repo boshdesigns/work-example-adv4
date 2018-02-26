@@ -1,0 +1,48 @@
+.entityform {
+  position: relative;
+
+  // Enquiry Form
+  &.entitytype-general_enquiries-form {
+    .entityform-row {
+      @include grid-row($behavior:nest);
+      .field-name-field-ef-name,
+      .field-name-field-email,
+      .field-name-field-phone {
+        @include grid-column(12);
+        @media #{$medium-up} { @include grid-column(4); }
+      }
+      .field-name-field-branch,
+      .field-name-field-body { @include grid-column(12); }
+    }
+  }
+
+  // Vehicle Enquiry Form
+  &.entitytype-vehicle_enquiry_form-form {
+    label {
+      font-weight:normal;
+    }
+    .entityform-row {
+      @include grid-row($behavior:nest);
+      .field-name-field-ef-name,
+      .field-name-field-email,
+      .field-name-field-phone {
+        @include grid-column(12);
+        @media #{$medium-up} { @include grid-column(4); }
+      }
+      .field-name-field-branch,
+      .field-name-field-body { @include grid-column(12); }
+    }
+  }
+
+  // Vehicle Valuation
+  &.entitytype-fmg_vehicle_valuation-form,
+  &.entitytype-fmg_caravan_motorhome_valuation-form,
+  &.entitytype-fmg_service_quotation-form {
+    fieldset {
+      border: none;
+      padding: 0;
+      margin: 0;
+    }
+  }
+
+}

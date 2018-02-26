@@ -1,0 +1,54 @@
+// FMG Search Pages View
+.view-fmgauto-search-pages {
+  .view-filters {
+    select { height: 43px; }
+  }
+  .views-exposed-form {
+    .views-exposed-widget {
+      padding-right: 10px;
+      &.views-widget-sort-order {
+        display: none;
+      }
+      .form-submit {
+        margin-top: 23px;
+      }
+    }
+  }
+  &__list {
+    @include block-grid(1);
+    margin-top: 50px;
+    li {
+      padding-bottom: 0;
+      &:nth-child(even) .node-used-vehicle.view-mode-search_result {
+        background: transparent;
+        border: {
+          style: solid;
+          width: 1px;
+        }
+      }
+    }
+  }
+  .item-list .pager {
+    @media #{$medium-up} {
+      text-align: right;
+    }
+    padding-top: 30px;
+    li {
+      float: none;
+      display: inline-block;
+    }
+  }
+}
+.block-fmgauto-ivendi {
+  #AdjustPanel-title h3 {
+    font-size: rem-calc(30);
+  }
+  .WebzationAdjustPanel {
+    .form-item {
+      padding-right: 10px;
+    }
+    #AdjustPanel-update {
+      margin-top: 23px;
+    }
+  }
+}

@@ -1,0 +1,54 @@
+// Promotional Blocks View
+.view-promotional-blocks {
+
+  // Homepage Display
+  &.view-display-id-homepage {
+    .view-promotional-blocks__list {
+      @include block-grid(1);
+      @media #{$medium-only} { @include block-grid(2); }
+      @media #{$large-up} { @include block-grid(4); }
+    }
+  }
+
+  // Sidebar Display
+  &.view-display-id-page_blocks,
+  &.view-display-id-sidebar {
+    @media #{$large-up} {
+      margin-top: 40px;
+    }
+    .view-promotional-blocks__list {
+      @include block-grid(1);
+      @media #{$medium-only} { @include block-grid(4); }
+
+      li {
+        @media #{$large-up} {
+          padding: {
+            top: 25px;
+            right: 30px;
+            bottom: 0;
+            left: 30px;
+          }
+          &:last-child {
+            padding-bottom: 25px;
+          }
+        }
+      }
+    }
+  }
+
+  &.view-display-id-page_blocks {
+    margin: {
+      top: 20px;
+      bottom: 20px;
+    }
+    // We need to override the BG colour from the
+    // color module as it's called after the this css file
+    @media #{$small-only} {
+      background-color: transparent !important;
+    }
+    @media #{$medium-only} {
+      background-color: transparent !important;
+    }
+  }
+
+}

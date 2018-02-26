@@ -1,0 +1,28 @@
+// Social Media Vocabulary
+.vocabulary-social-media {
+  i {
+    font-size: rem-calc(16);
+    margin-right: 3px;
+    width: auto;
+  }
+
+  // Full View Mode
+  &.view-mode-full {
+    margin-right: 20px;
+
+    .field-name-title {
+      font-size: rem-calc(16);
+    }
+  }
+
+  // Footer View Mode
+  &.view-mode-footer {
+    margin: {
+      right: 10px;
+      left: 10px;
+    }
+    i {
+      font-size: rem-calc(28);
+    }
+  }
+}

@@ -1,0 +1,47 @@
+// Contact Page View Mode
+.l-node-branch--contact-page {
+  @include grid-row($behavior:nest);
+  &__address,
+  &__directions {
+    @include grid-column(12);
+    @media #{$large-up} { @include grid-column(6); }
+  }
+  &__departments { @include grid-column(12); }
+  &__title { @include grid-column(12); }
+}
+
+// Footer View Mode
+.l-node-branch--footer {
+  &__address,
+  &__title { display: inline-block; }
+}
+
+// Vehicle Branch View Mode
+.l-node-branch--vehicle-branch {
+  @include grid-row($behavior:nest);
+  &__map {
+    @include grid-column($columns:12,$collapse:true);
+    margin-bottom: 20px;
+    @media #{$medium-up} {
+      @include grid-column(12);
+    }
+  }
+  &__details {
+    @include grid-column(12);
+    @media #{$medium-only} {
+      @include grid-column(4);
+    }
+    @media #{$large-up} {
+      @include grid-column(5);
+    }
+  }
+  &__directions {
+    @include grid-column(12);
+    @media #{$medium-only} {
+      @include grid-column(8);
+    }
+    @media #{$large-up} {
+      @include grid-column(7);
+    }
+  }
+}

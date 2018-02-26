@@ -1,0 +1,113 @@
+.top-bar {
+  -webkit-transition: all 100ms ease-out;
+  -moz-transition: all 100ms ease-out;
+  -o-transition: all 100ms ease-out;
+  -ms-transition: all 100ms ease-out;
+  transition: all 100ms ease-out;
+  z-index: 99;
+  &.expanded {
+    background: transparent;
+  }
+  .toggle-topbar.menu-icon {
+    margin-top: -20px;
+    a {
+      padding: 0;
+      span {
+        margin-right: 10px;
+        &::after {
+          display: none;
+        }
+      }
+      i {
+        -webkit-border-radius: 2px;
+        -moz-border-radius: 2px;
+        border-radius: 2px;
+        border: {
+          style: solid;
+          width: 1px;
+        }
+        width: 45px;
+        height: 40px;
+        text-align: center;
+        padding-top: 9px;
+      }
+    }
+  }
+  #main-menu {
+    .menu-icon {
+      padding-right: 15px;
+    }
+
+
+    @media #{$large-up} {
+      display: table;
+      text-align: right;
+      width: 100%;
+
+      & > li {
+        display: inline-block;
+        float: none;
+        margin-left: 3%;
+        text-align: center;
+
+        .menu-icon {
+          padding-top: 8px;
+          padding-bottom: 8px;
+        }
+
+        > a {
+          padding: 0;
+        }
+
+        // Fix the dropdowns to the right
+        &.has-dropdown {
+          > ul.dropdown {
+            left: auto;
+            right: 0;
+            .dropdown {
+              right: 100%;
+              left: auto;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Has dropdown arrow styling to match the fixed right dropdown
+@media #{$large-up} {
+  .top-bar-section .has-dropdown {
+    >a {
+      padding-right: 1.0416666667rem !important;
+      &:after {
+        border: inset 5px;
+        border-right-color: transparent;
+        border-bottom-color: transparent;
+        border-left-color: transparent;
+        border-top-style: solid;
+        content: "";
+        display: block;
+        height: 0;
+        margin-top: -2.5px;
+        margin-right: 0;
+        top: 1.5625rem;
+        width: 0;
+      }
+    }
+    .dropdown li.has-dropdown>a {
+      &::before {
+        content: "\00AB";
+        border: none;
+        top: 1rem;
+        margin-top: -1px;
+        left: 5px;
+        line-height: 1.2;
+        padding-right: 10px;
+      }
+      &::after {
+        display: none;
+      }
+    }
+  }
+}

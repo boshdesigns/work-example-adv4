@@ -1,0 +1,42 @@
+// Footer Contact Details Syling
+.footer-contact-details {
+  margin-bottom: 70px;
+  @media #{$medium-up} {
+    margin-bottom: 12px;
+  }
+
+  // Title styling
+  &__title {
+    font-size: rem-calc(16);
+    margin: {
+      right: 3px;
+    }
+    @media #{$medium-up} {
+      display: inline-block;
+    }
+    i {
+      font-size: rem-calc(18);
+      margin-right: 5px;
+    }
+  }
+
+  // Contact Details List Styling
+  &__list {
+    display: inline-block;
+    list-style: none;
+    margin: 0;
+    li {
+      display: inline-block;
+      margin: {
+        right: 3px;
+        left: 3px;
+      }
+      &:last-child::after {
+        content: '';
+      }
+      &::after {
+        content: ',';
+      }
+    }
+  }
+}

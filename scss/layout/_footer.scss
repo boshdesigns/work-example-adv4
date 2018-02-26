@@ -1,0 +1,51 @@
+.l-footer {
+  @media #{$large-up} {
+    padding: 50px;
+  }
+  &__first,
+  &__second,
+  &__third { @include grid-column(12); }
+  &__inner {
+    @include grid-row();
+    padding: 15px;
+  }
+
+  &__fourth {
+    border-top: {
+      style: solid;
+      width: 1px;
+    }
+    margin-top: 120px;
+    padding: {
+      top: 45px;
+      bottom: 55px;
+    }
+    @include grid-column(12);
+    @media #{$medium-only} {
+      margin-top: 80px;
+    }
+    @media #{$large-up} {
+      margin-top: 100px;
+      padding-bottom: 25px;
+    }
+  }
+
+  &__bottom {
+    position: relative;
+    padding-top: 70px;
+    text-align: center;
+    @media #{$large-up} {
+      padding-top: 90px;
+    }
+  }
+
+  &__pagetop {
+    display: none;
+    bottom: 50px;
+    position: absolute;
+    right: 50px;
+    @media #{$large-up} {
+      display: block;
+    }
+  }
+}

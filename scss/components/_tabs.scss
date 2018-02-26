@@ -1,0 +1,162 @@
+// Tabs
+.tabs {
+  li {
+    @media #{$small-only} { width: 100%; }
+  }
+  // New & Used Vehicle Gallery
+  &--node-new-vehicle-gallery,
+  &--node-new-vehicle-cap,
+  &--node-used-vehicle-gallery {
+    li{
+      @media #{$small-only} { width: auto; }
+    }
+  }
+}
+
+// Tabs Content
+.tabs-content {
+
+  // New & Used Vehicle Gallery
+  &--node-new-vehicle-gallery,
+  &--node-new-vehicle-cap,
+  &--node-used-vehicle-gallery {
+    .content {
+      padding: 0;
+      .videos { @include block-grid(1); }
+    }
+  }
+  &--node-new-vehicle-cap {
+    padding: 20px;
+    background-color: $secondary-color;
+  }
+
+}
+
+.tabs--node-used-vehicle-gallery {
+  li.tab-title a i {
+    font-size: rem-calc(20);
+  }
+}
+.tabs-content--node-used-vehicle-gallery {
+  #tab-images {
+    background: #111;
+    .gallery-thumbs{
+      padding-bottom: 5px;
+    }
+  }
+}
+
+// Tabs for Used Vehicle Details
+.tabs--node-used-vehicle-tabbed-content {
+  li {
+    width: 25%;
+    text-align: center;
+    @media #{$small-only} {
+      display: none;
+    }
+    @media #{$medium-up} {
+      &:first-child {
+        border-top-left-radius: 4px;
+        overflow: hidden;
+      }
+      &:last-child {
+        border-top-right-radius: 4px;
+        overflow: hidden;
+      }
+    }
+    &.tab-title {
+      border: {
+        style: solid;
+        width: 1px;
+      }
+      &:hover,
+      &:active,
+      &:focus,
+      &.active {
+        @media #{$medium-up} {
+          border-top-right-radius: 4px;
+          border-top-left-radius: 4px;
+          margin-top: -3px;
+          overflow: hidden;
+          a {
+            padding: {
+              top: 13px;
+              right: 0;
+              left: 0;
+            }
+          }
+        }
+      }
+
+      a {
+        font: {
+          size: rem-calc(16);
+          weight: bold;
+        }
+        padding: {
+          top: 10px;
+          right: 5px;
+          bottom: 5px;
+          left: 5px;
+        }
+        @media #{$large-up} {
+          font-size:rem-calc(18);
+          padding: 10px;
+        }
+        &#vehicle-finance {
+          min-height: auto;
+        }
+      }
+    }
+  }
+
+  &__with-sidebar {
+    @media #{$large-up} {
+      li.tab-title a {
+        font-size: rem-calc(14);
+      }
+    }
+  }
+}
+
+// Tabbed content for Used Vehicle Details
+.tabs-content--node-used-vehicle-tabbed-content {
+  @media #{$medium-up} {
+    border: {
+      color: inherit;
+      style: solid;
+      width: 1px;
+    }
+    margin-top: -1px;
+  }
+  .content {
+    @media #{$small-only} {
+      display: block;
+    }
+    @media #{$medium-only} {
+      padding: 60px;
+    }
+    @media #{$large-up} {
+      padding: {
+        top: 80px;
+        right: 90px;
+        bottom: 80px;
+        left: 90px;
+      }
+    }
+    @include clearfix();
+    &#tab-contact {
+      .content {
+        padding: 0;
+      }
+    }
+  }
+
+  &__with-sidebar {
+    .content {
+      @media #{$medium-up} {
+        padding: 40px;
+      }
+    }
+  }
+}

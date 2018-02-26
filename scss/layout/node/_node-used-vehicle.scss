@@ -1,0 +1,311 @@
+// Full View Mode
+.l-node-used-vehicle--full {
+  @include grid-row($behavior:nest);
+  &__gallery {
+    @include grid-column(12);
+    @media #{$medium-up} { @include grid-column(6); }
+    &-sash-wrap {
+     position: relative;
+     overflow: hidden;
+    }
+  }
+  &__right {
+    @include grid-column(12);
+    @media #{$medium-up} {
+      @include grid-column(6);
+    }
+    @media #{$large-up} {
+      padding-left:40px;
+    }
+  }
+  &__title,
+  &__save {
+    width: 100%;
+  }
+  &__price {
+    width: 100%;
+    margin-bottom: 20px;
+    @media #{$large-up} {
+      margin-bottom: 0;
+    }
+
+    // Hack - add a comma if monthly price is set
+    &--after .field-name-field-vehicle-price:after {
+      content:',';
+      font-weight: 400;
+      margin-left: 3px;
+    }
+  }
+  &__number-and-social-wrap {
+    @include grid-column(12);
+    margin-top: 20px;
+    @media #{$large-up} {
+      @include grid-column($columns:6,$float:right);
+    }
+    &--inner {
+      padding: 10px;
+      position: relative;
+      @media #{$large-up} {
+        padding: {
+          top: 17px;
+          bottom: 17px;
+        }
+      }
+    }
+  }
+  &__vehicle-number {
+    @media #{$medium-up} {
+      @include grid-column(8);
+    }
+  }
+  &__share-icons {
+    text-align: right;
+    position: absolute;
+    bottom: 12px;
+    right: 15px;
+    @media #{$large-up} {
+      bottom: 20px;
+      right: 25px;
+    }
+  }
+  &__monthly-price {
+    display: inline-block;
+  }
+  &__main-specification {
+    @include grid-column(12);
+    @media #{$large-up} {
+      width:100%;
+    }
+  }
+
+  &__additional-vehicle-details,
+  &__features {
+    margin-bottom: 20px;
+    @include grid-column(12);
+  }
+  &__cta {
+    @include grid-column(12);
+    margin-bottom: 30px;
+  }
+  &__form,
+  &__finance,
+  &__ivendi-finance-checker { @include grid-column(12); }
+  &__tabbed-content {
+    @include grid-column($columns:12,$collapse:true);
+    @media #{$medium-up} {
+      @include grid-column(12);
+    }
+  }
+
+  &__files {
+    margin-bottom: 20px;
+    @include grid-column(12);
+  }
+
+  &__branchinfo {
+    @include grid-column(12);
+    padding-top: 50px;
+    margin-bottom: 50px;
+  }
+
+  &__saving-price { margin-bottom: 5px; }
+  &__technical {
+    @include grid-column(12);
+    ul {
+      @include block-grid(1);
+      @media #{$large-up} {
+        @include block-grid(3);
+      }
+    }
+  }
+  &__similar-vehicles {
+    @include grid-column(12);
+    margin-bottom:50px;
+  }
+
+
+  // Extra styling for Node Used Vehicle based
+  // on if the sidebar existing or not
+  &__with-sidebar {
+
+    .l-node-used-vehicle--full__right {
+      padding-left: 15px;
+    }
+
+    .l-node-used-vehicle--full__number-and-social-wrap {
+      @include grid-column(12);
+    }
+
+  }
+}
+
+
+
+// Search Result & Compare Vehicles View Mode
+.l-node-used-vehicle--compare-vehicle,
+.l-node-used-vehicle--search-result {
+
+
+  &.l-node-used-vehicle--search-result-multiple-images {
+    .l-node-used-vehicle--compare-vehicle__additional,
+    .l-node-used-vehicle--search-result__additional {
+      display: none;
+
+      // Medium Only
+      @media #{$medium-only} {
+        @include grid-column($columns:12);
+        display: block;
+        margin-top: 10px;
+      }
+
+      // Large Up Only
+      @media #{$large-up} {
+        @include grid-column($columns:7, $float:right);
+        display: block;
+        margin-top: 10px;
+      }
+    }
+  }
+
+  &__footer {
+    display: none;
+    @media #{$medium-up} {
+      display: block;
+      @include grid-column(12);
+    }
+  }
+  &__ivendi {
+    display:none;
+    @media #{$large-up} {
+      display:block;
+      @include grid-column(12);
+    }
+  }
+  &__more-info {
+    text-align: right;
+    @include grid-column($columns:6,$collapse:true,$float:right);
+  }
+
+  &__photo {
+    @include grid-column(12);
+    @media #{$medium-up} { @include grid-column(4); }
+    &-sash-wrap {
+     position: relative;
+     overflow: hidden;
+    }
+  }
+
+  &__photo-inner {
+    position: relative;
+  }
+
+  &__photo-thumbs {
+    @include grid-column($columns:12, $collapse:true);
+  }
+  &__header {
+    @include grid-row();
+  }
+  &__price {
+    @include grid-column(12);
+    margin-bottom:15px;
+    @media #{$medium-up} {
+      text-align: right;
+      @include grid-column($columns:4,$float:right);
+      margin-bottom:0;
+    }
+  }
+  &__monthly-price {
+    @media #{$small-only} {
+      display:inline-block;
+    }
+  }
+
+  &__right {
+    display: none;
+    @media #{$medium-up} {
+      display: block;
+      @include grid-column(8);
+    }
+  }
+  &__additional {
+    display: none;
+    @media #{$medium-only} {
+      display: block;
+      @include grid-column(12);
+      margin-top:20px;
+    }
+    @media #{$large-up} {
+      display: block;
+      @include grid-column($columns:8,$float:right);
+    }
+  }
+  &__spec {
+    width:100%;
+    padding-top:20px;
+    @media #{$large-up} {
+      padding-top:40px;
+    }
+  }
+  &__title {
+    @include grid-column(12);
+    @media #{$medium-up} { @include grid-column(8); }
+  }
+  &__social {
+    @include grid-column($columns:4,$collapse:true);
+  }
+  &__youtube {
+    float: left;
+    width: 12%;
+    @media #{$large-up} {
+      width: 10%;
+    }
+  }
+  
+  // Style up the save button for mobile only
+  &__save--mobile-only {
+    display: block;
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+
+    @media #{$medium-up} {
+      display: none;
+    }
+
+    // button styling
+    i {
+      color: white;
+      border: white 1px solid;
+      padding: 6px;
+      font-size: rem-calc(26);
+    }
+    span {
+      display: none;
+    }
+    .button,
+    .button:hover {
+      background-color: transparent;
+      padding: 0;
+    }
+
+  }
+}
+
+
+// Featured Vehicles
+.l-node-used-vehicle--featured-vehicles {
+  border: {
+    style: solid;
+    width: 1px;
+  }
+  &__main-content {
+    padding: 20px;
+    position: relative;
+  }
+
+  &__button {
+    bottom: 0;
+    position: absolute;
+    right: 20px;
+  }
+}

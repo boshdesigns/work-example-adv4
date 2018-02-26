@@ -1,0 +1,25 @@
+// Social Media View
+.view-social-media {
+  &__list {
+    li {
+      display: inline-block;
+      list-style: none;
+    }
+  }
+
+  // Header Display
+  &.view-display-id-header_social {
+    display: none;
+    @media #{$medium-up} { display: block; }
+    .view-social-media__list {
+      margin: 0;
+    }
+  }
+
+  // Footer Display
+  &.view-display-id-footer_social {
+    text-align: center;
+    .view-social-media__list { margin-left: 0; }
+  }
+
+}

@@ -1,0 +1,25 @@
+// Footer PageTop Button
+.footer-pagetop-button {
+  i {
+    border: {
+      style: solid;
+      width: 1px;
+    }
+    border-radius: $global-radius;
+    -moz-border-radius: $global-radius;
+    -webkit-border-radius: $global-radius;
+    padding: {
+      top: 22px;
+      bottom: 22px;
+    }
+    font-size: rem-calc(12);
+    -webkit-transition: background-color 300ms ease-out;
+    -moz-transition: background-color 300ms ease-out;
+    -o-transition: background-color 300ms ease-out;
+    transition: background-color 300ms ease-out;
+    width: 56px;
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+  }
+}

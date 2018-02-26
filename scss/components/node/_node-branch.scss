@@ -1,0 +1,107 @@
+// Branch Bundle
+.node-branch {
+  .field-name-get-directions {
+    .directions {
+      &__inner {
+        @include grid-row();
+        @media #{$medium-up} {
+          @include grid-row($behavior:nest);
+        }
+      }
+      &__label {
+        @include grid-column($columns:12,$collapse:true);
+        margin-bottom: 5px;
+      }
+      &__location {
+        margin-bottom: 0;
+        @include grid-column($columns:12,$collapse:true);
+        @media #{$medium-up} {
+          @include grid-column(6);
+          padding-left: 0;
+        }
+      }
+      &__transport {
+        margin-bottom: 0;
+        @include grid-column($columns:12,$collapse:true);
+        @media #{$medium-up} {
+          @include grid-column(6,$collapse:true);
+        }
+      }
+      &__submit {
+        @include grid-column($columns:12,$collapse:true);
+        button {
+          padding: {
+            top: 14px;
+            right: 0;
+            bottom: 14px;
+            left: 0;
+          }
+          text-align: center;
+          width: 100%;
+        }
+      }
+    }
+
+    &--vehicle-branch {
+      .directions {
+        &__submit {
+          @media #{$medium-up} {
+            @include grid-column(3);
+            padding-right: 0;
+          }
+        }
+        &__location {
+          @media #{$medium-up} {
+            @include grid-column(5);
+            padding-left: 0;
+          }
+        }
+        &__transport {
+          @media #{$medium-up} {
+            @include grid-column(4,$collapse:true);
+          }
+        }
+      }
+    }
+  }
+
+  // Contact Page View Mode
+  &.view-mode-contact_page {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    .field-name-field-address { margin-bottom: 20px; }
+  }
+
+  // Footer View Mode
+  &.view-mode-footer {
+    text-align: center;
+    .field-name-title {
+      margin-right: 1px;
+      &::after { content: ','; }
+    }
+    .field-name-field-address,
+    .field-name-field-branch-reg-office-address {
+      div { display: inline-table; }
+      .thoroughfare,
+      .premise,
+      .locality,
+      .state,
+      .postal-code {
+        margin-right: 5px;
+        &::after { content: ','; }
+      }
+    }
+  }
+
+  // Vehicle Branch View Mode
+  &.view-mode-vehicle_branch {
+    .field-name-field-address{
+      font-size: rem-calc(15);
+    }
+    .field-name-departments {
+      margin-bottom: 10px;
+      font-size: rem-calc(15);
+    }
+  }
+
+}

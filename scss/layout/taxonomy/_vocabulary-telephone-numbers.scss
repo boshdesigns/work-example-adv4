@@ -1,0 +1,12 @@
+// Full View Mode
+.l-taxonomy-term-telephone-numbers--full {
+  &__label,
+  &__telephone-numbers { display: inline-block; }
+}
+
+// Header Phone Numbers View Mode
+.l-taxonomy-term-telephone-numbers--header-phone-numbers {
+  &__icon,
+  &__label,
+  &__telephone-numbers { display: inline-block; }
+}

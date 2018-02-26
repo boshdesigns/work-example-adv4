@@ -1,0 +1,14 @@
+// Header Telephone Numbers
+.view-header-telephone-numbers {
+  &__list {
+    margin: 0;
+    text-align: center;
+    @media #{$medium-up} {
+      text-align: right;
+    }
+    li {
+      display: inline-block;
+      padding-bottom: 0;
+    }
+  }
+}

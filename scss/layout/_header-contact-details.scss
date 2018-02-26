@@ -1,0 +1,64 @@
+// Header Contact Details
+
+// We need the header to act differently on front
+.front {
+  .l-contact-details {
+    &__inner {
+      max-width: 100%;
+      @media #{$large-up} {
+        padding: {
+          top: 10px;
+          right: 35px;
+          bottom: 10px;
+          left: 35px;
+        }
+      }
+    }
+  }
+}
+
+.l-contact-details {
+  &__inner {
+    @include grid-row;
+    max-width: rem-calc(1820);
+    padding: {
+      top: 10px;
+      bottom: 10px;
+    }
+    @media #{$xlarge-up} {
+      padding: {
+        top: 10px;
+        right: 35px;
+        bottom: 10px;
+        left: 35px;
+      }
+    }
+  }
+  &__contact {
+    text-align: center;
+    @include grid-column(12);
+
+    @media #{$medium-up} {
+      text-align: right;
+      @include grid-column($columns:6,$float:right);
+    }
+
+    &__email {
+      display: none;
+      @media #{$medium-up} {
+        display: inline-block;
+      }
+    }
+    &__telephone-numbers {
+      display: inline-block;
+    }
+  }
+  &__social-icons {
+    display: none;
+
+    @media #{$medium-up} {
+      display: block;
+      @include grid-column(6);
+    }
+  }
+}

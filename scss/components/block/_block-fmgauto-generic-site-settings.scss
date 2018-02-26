@@ -1,0 +1,10 @@
+// Footer Message
+.block-fmgauto-generic-site-settings {
+  &-fmg-dealer-footer-message {
+    display: inline-block;
+    text-align: center;
+    .copyright {
+      font-size: rem-calc(16);
+    }
+  }
+}

@@ -1,0 +1,28 @@
+// Vehicle Makes View
+.view-vehicle-makes {
+  display: inline-block;
+  text-align: center;
+  .view-vehicle-makes__list {
+    margin-left: 0;
+    margin-bottom: 70px;
+    @media #{$medium-up} {
+      margin-bottom: 20px;
+    }
+    li {
+      display: inline-block;
+      font-size: rem-calc(16);
+      list-style: none;
+      &:last-child {
+        a::after {
+          content: '';
+        }
+      }
+      a {
+        display: block;
+        &::after {
+          content: ',';
+        }
+      }
+    }
+  }
+}

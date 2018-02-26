@@ -1,0 +1,152 @@
+// Slideshow Images Bundle
+.node-slideshow-images {
+  @media #{$medium-up} {
+    height: 100%;
+    position: relative;
+  }
+
+  &__overlay {
+    background-color: #111111;
+    color: #ffffff;
+    padding: {
+      top: 35px;
+      right: 20px;
+      bottom: 35px;
+      left: 20px;
+    }
+    text-align: center;
+    @media #{$medium-up} {
+      background-color: rgba(0,0,0,0.8);
+      height: 100%;
+      padding: {
+        top: 0;
+        right: 12%;
+        bottom: 0;
+        left: 12%;
+      }
+      position: absolute;
+      top: 0;
+      width: 100%;
+
+      // If the overlay isn't empty center align content vertically
+      &--aligned-content {
+        position: relative;
+        -webkit-transform: translateY(-50%);
+        -moz-transform: translateY(-50%);
+        -o-transform: translateY(-50%);
+        -webkit-transform: translateY(-50%);
+        top: 50%;
+        display: block;
+      }
+    }
+
+    @media #{$large-up} {
+      padding: {
+        top: 0;
+        right: 28%;
+        bottom: 0;
+        left: 28%;
+      }
+    }
+  }
+
+  .field-name-title {
+    color: #ffffff;
+    font-size: rem-calc(20);
+    line-height: normal;
+    margin-bottom: 20px;
+    text-align: center;
+
+    @media #{$medium-only} {
+      font-size: rem-calc(25);
+    }
+
+    @media #{$large-up} {
+      font-size: rem-calc(35);
+      margin-bottom: 55px;
+    }
+
+    @media #{$xlarge-up} {
+      font-size: rem-calc(40);
+    }
+  }
+
+  .field-name-field-body {
+    color: #ffffff;
+    font-size: rem-calc(16);
+    margin-bottom: 20px;
+
+    @media #{$medium-only} {
+      font-size: rem-calc(17);
+      margin-bottom: 50px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      -o-text-overflow: ellipsis;
+      min-height: 40px;
+    }
+
+    @media #{$large-up} {
+      font-size: rem-calc(18);
+      margin-bottom: 40px;
+    }
+  }
+
+
+  // Page Slideshow View Mode
+  &.view-mode-page_slideshow {
+    .node-slideshow-images__overlay {
+      padding: {
+        top: 35px;
+        right: 20px;
+        bottom: 35px;
+        left: 20px;
+      }
+      @media #{$medium-up} {
+        padding: {
+          top: 0;
+          right: 12%;
+          bottom: 0;
+          left: 12%;
+        }
+      }
+      @media #{$large-up} {
+        padding: {
+          top: 0;
+          right: 10%;
+          bottom: 0;
+          left: 10%;
+        }
+      }
+    }
+
+    .field-name-title {
+      color: #ffffff;
+      font-size: rem-calc(20);
+      line-height: normal;
+      margin-bottom: 20px;
+      text-align: center;
+
+      @media #{$medium-only} {
+        font-size: rem-calc(30);
+      }
+
+      @media #{$large-up} {
+        font-size: rem-calc(35);
+      }
+    }
+
+    .field-name-field-body {
+      color: #ffffff;
+      font-size: rem-calc(16);
+      margin-bottom: 20px;
+
+      @media #{$medium-only} {
+        margin-bottom: 20px;
+        white-space: normal;
+        overflow: visible;
+        min-height: auto;
+      }
+    }
+  }
+}

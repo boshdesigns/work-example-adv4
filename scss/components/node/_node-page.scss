@@ -1,0 +1,100 @@
+// Page Bundle
+.node-page {
+
+  // Full View Mode
+  &.view-mode-full {
+    field-name-body--full {
+      margin-bottom: 30px;
+      padding: {
+        right: 20px;
+        left: 20px;
+      }
+      @media #{$medium-up} {
+        padding: {
+          right: 25px;
+          left: 25px;
+        }
+      }
+    }
+    .children {
+      @include block-grid(1);
+      border-bottom: {
+        color: inherit;
+        style: solid;
+        width: 1px;
+      }
+      padding-bottom: 10px;
+      margin-bottom: 50px;
+    }
+    .field-name-field-files {
+      a {
+        display: block;
+        padding: {
+          top: 10px;
+          bottom: 10px;
+        }
+        margin-bottom: 20px;
+        text-align: center;
+        -webkit-transition: all 300ms ease-out;
+        -moz-transition: all 300ms ease-out;
+        -o-transition: all 300ms ease-out;
+        transition: all 300ms ease-out;
+      }
+      .file {
+        font-size: rem-calc(17);
+        letter-spacing: 1px;
+        @media #{$large-up} {
+          font-size: rem-calc(18);
+        }
+        .file-title {
+          &:before {
+            content: '\f15b';
+            font-family: 'fontawesome';
+            padding-right: 10px;
+          }
+        }
+      }
+    }
+  }
+
+  // Teaser View Mode
+  &.view-mode-teaser {
+    border-top: {
+      style: solid;
+      width: 1px;
+    }
+    padding-top: 30px;
+    .field-name-body {
+      p {
+        font-size:rem-calc(16);
+      }
+    }
+    .field-name-field-image { margin-bottom: 10px; }
+    .field-name-node-link a {
+      border-radius: $global-radius;
+      -moz-border-radius: $global-radius;
+      -webkit-border-radius: $global-radius;
+      letter-spacing: 1px;
+      font: {
+        size: rem-calc(17);
+        weight: bold;
+      }
+      padding: {
+        top: 10px;
+        right: 20px;
+        bottom: 10px;
+        left: 20px;
+      }
+      min-height: 45px;
+      text-align: center;
+      -webkit-transition: all 300ms ease-out;
+      -moz-transition: all 300ms ease-out;
+      -o-transition: all 300ms ease-out;
+      transition: all 300ms ease-out;
+      @media #{$large-up} {
+        font-size: rem-calc(18);
+      }
+    }
+  }
+
+}

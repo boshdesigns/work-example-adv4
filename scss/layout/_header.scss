@@ -1,0 +1,58 @@
+// We need the header to act differently on front
+.front {
+  .l-header {
+    &--inner {
+      max-width: 100%;
+      @media #{$large-up} {
+        padding: {
+          top: 0;
+          right: 35px;
+          bottom: 0;
+          left: 35px;
+        }
+      }
+    }
+  }
+}
+
+.l-header {
+  padding-top: 30px;
+  padding-bottom: 30px;
+
+  &--inner {
+    @include grid-row();
+    max-width: rem-calc(1820);
+    @media #{$xlarge-up} {
+      padding: {
+        top: 0;
+        right: 35px;
+        bottom: 0;
+        left: 35px;
+      }
+    }
+  }
+
+  &__logo {
+    -webkit-transition: all 300ms ease-out;
+    -moz-transition: all 300ms ease-out;
+    -o-transition: all 300ms ease-out;
+    transition: all 300ms ease-out;
+    @include grid-column(6);
+    @media #{$small-only} {
+      position: relative;
+      z-index: 100;
+    }
+    @media #{$large-up} {
+      @include grid-column(3);
+    }
+  }
+
+  &__navigation {
+    position: absolute;
+    @include grid-column(12);
+    @media #{$large-up} {
+      position: relative;
+      @include grid-column(9);
+    }
+  }
+}

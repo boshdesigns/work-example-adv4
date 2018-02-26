@@ -1,0 +1,38 @@
+// Telephone Numbers Vocabulary
+.vocabulary-telephone-numbers {
+
+  // Full View Mode
+  &.view-mode-full {
+    .field-name-field-label{
+      &:before{
+        content:'\f095';
+        font-family: 'fontawesome';
+      }
+    }
+    .field-name-field-phone {
+      font-size: rem-calc(15);
+      font-weight: normal;
+    }
+
+  }
+
+  // Header Phone Numbers View Mode
+  &.view-mode-header_phone_numbers {
+    margin-left: 30px;
+    .field {
+      @media #{$medium-up} { font-size: rem-calc(16); }
+      &.field-name-field-icon {
+        font-size: rem-calc(16);
+      }
+      &.field-name-field-label {
+        font-size: rem-calc(16);
+        @media #{$medium-up} { display: none; }
+      }
+      &.field-name-field-phone {
+        display: none;
+        @media #{$medium-up} { display: inline-block; }
+      }
+    }
+  }
+
+}

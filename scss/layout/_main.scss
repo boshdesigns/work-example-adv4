@@ -1,0 +1,18 @@
+.not-front {
+  .l-main {
+    &__inner { @include grid-row(); }
+    .l-main-content {
+      @include grid-column(12);
+      &.l-main-content--with-sidebar {
+        @media #{$large-up} {
+          @include grid-column($columns:9,$push:3);
+          padding-left: rem-calc(45);
+        }
+      }
+    }
+    .l-sidebar {
+      @include grid-column(12);
+      @media #{$large-up} { @include grid-column($columns:3,$pull:9); }
+    }
+  }
+}

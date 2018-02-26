@@ -1,0 +1,111 @@
+// Promotional Block Bundle
+.bean-promotional-block {
+  margin-bottom: 20px;
+  text-align: center;
+
+  // Default View Mode
+  &.view-mode-default {
+    .field-name-bean-title {
+      font-size: rem-calc(24);
+      margin-bottom: 15px;
+    }
+    .field-name-field-icon {
+      font-size: rem-calc(34);
+      padding: {
+        top: 43px;
+        bottom: 43px;
+      }
+    }
+    .field-name-field-body {
+      p {
+        -webkit-transition: all 300ms ease-out;
+        -moz-transition: all 300ms ease-out;
+        -o-transition: all 300ms ease-out;
+        transition: all 300ms ease-out;
+        font-size: rem-calc(16);
+        line-height: rem-calc(30);
+      }
+    }
+    .field-name-field-image img {
+      -webkit-transition: all 300ms ease-out;
+      -moz-transition: all 300ms ease-out;
+      -o-transition: all 300ms ease-out;
+      transition: all 300ms ease-out;
+      opacity: 1;
+    }
+    .read-more {
+      display: none;
+      text-align: center;
+      @media #{$large-up} {
+        display: inline-block;
+      }
+
+    }
+    .button.read-more {
+      border-radius: 3px;
+      -moz-border-radius: 3px;
+      -webkit-border-radius: 3px;
+      font-size: rem-calc(16);
+      height: 40px;
+      padding: {
+        top: 10px;
+        right: 20px;
+        bottom: 10px;
+        left: 20px;
+      }
+      margin-bottom: 0;
+      -webkit-transform: translate3d(0,10px,0);
+      -moz-transform: translate3d(0,10px,0);
+      -o-transform: translate3d(0,10px,0);
+      transform: translate3d(0,10px,0);
+      -webkit-transition: all 300ms ease-out;
+      -moz-transition: all 300ms ease-out;
+      -o-transition: all 300ms ease-out;
+      transition: all 300ms ease-out;
+      opacity: 0;
+    }
+
+    @media #{$large-up} {
+      &:hover {
+        .button.read-more {
+          -webkit-transform: translate3d(0,0,0);
+          -moz-transform: translate3d(0,0,0);
+          -o-transform: translate3d(0,0,0);
+          transform: translate3d(0,0,0);
+          opacity: 1;
+        }
+      }
+      &.bean-promotional-block--with-icon:hover {
+        .field-name-field-image img {
+          opacity: 0.1;
+        }
+      }
+    }
+  }
+
+  // Sidebar View Mode
+  &.view-mode-sidebar {
+    margin-bottom: 0;
+    .field-name-bean-title {
+      font-size: rem-calc(20);
+    }
+    .field-name-field-body {
+      margin-top: 15px;
+      @media #{$large-up} {
+        margin-top: 0;
+      }
+    }
+    .field-name-field-icon {
+      font-size: rem-calc(27);
+      padding: {
+        top: 22px;
+        bottom: 23px;
+      }
+    }
+    .field-name-field-image {
+      img {
+        opacity: 0.1;
+      }
+    }
+  }
+}
